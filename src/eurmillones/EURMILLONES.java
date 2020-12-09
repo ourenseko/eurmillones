@@ -33,7 +33,7 @@ Notas:
 -Se ha optado por verificar que el usuario introduce datos correctos en el momento que los introduce y no una vez compuesto el boleto.
 -Con do-while se muestran los menus y con switch la operatividad del usuario
 -en Python boletoApuesta[] ==> en Java Arrays.toString(boletoApuesta) 
--Sobra la correción en la que hacemos que no sume aciertos ya acertados, por ejemplo si boletoApuesta tiene cinco 1 y en boletoPremiado hay un 1 mostraía 5+0. Si no se pueden repetir los numeros, esto ya no puede ocurrir. 
+-Sobra la correción en la que hacemos que no sume numeros ya acertados (memo[]). Si no se pueden repetir los numeros, esto ya no puede ocurrir. 
 
 
 Correciones:
