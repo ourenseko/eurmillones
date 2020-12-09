@@ -58,7 +58,7 @@ import java.util.Scanner;
  *
  * @author manuelbaceiredo
  * @license MIT License 
- * @date 03/12/2020
+ * @date 03/12/2020 - 09/12/2020
  * @version v1.0 (Terminal)
  *  
  */
@@ -184,8 +184,7 @@ public class EURMILLONES {
        // nAciertos < 5 || nEstrellas < 1  ==> Que salga un 5+1 o más
        System.out.println("\nFELICIDADES!! ");
     }
-    
-    
+     
     
     //Usamos el metodo para saber si n es x<=n<=y
     public static boolean intervaloCheck(int n, int x, int y) {
@@ -195,8 +194,7 @@ public class EURMILLONES {
         }
         return intervalo;
     }
-    
-    
+
     
     //Usamos el metodo para ordenar los numeros arreglo[] crecientemente
     public static int[] ordenar(int[] arreglo){ 
@@ -221,7 +219,6 @@ public class EURMILLONES {
     } 
     
     
-
     //Usamos el metodo para saber si ∃ n ∈ arreglo
     public static boolean numeroCheck(int[] arreglo, int n, int arrayPosicion){ 
         boolean seRepite = false;
