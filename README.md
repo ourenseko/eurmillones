@@ -1,4 +1,4 @@
-# Eurmillones
+# Eurmillones simulator!
 Codigo fuente
 ---
 src/
