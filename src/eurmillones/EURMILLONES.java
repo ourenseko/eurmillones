@@ -43,8 +43,8 @@ Correciones:
 -Si se ingrersa un numero repetido vuelve a pedir el numero 
 
 Errores:
--En boleto manual si introduciomos una letra en vez de un numero el programa se rompe, control de errores?
-
+-En boleto manual si introduciomos una letra en vez de un numero el programa se rompe. Establecer control de errores
+-Al intoducir numeros y estrellas, si escribimos un numero superior a lo aceptable por el tipo de dato el programa se rompe. Establecer control de errores
 
  */
 package eurmillones;
