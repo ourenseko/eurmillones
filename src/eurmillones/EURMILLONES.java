@@ -123,7 +123,7 @@ public class EURMILLONES {
         boletoApuesta = ordenar(boletoApuesta);
         System.out.println("Su boleto: "+Arrays.toString(boletoApuesta)+"\n");
         
-        int nIteracion=0;
+        long nIteracion=0;
         int nAciertos,  nEstrellas;
        do{
                 nAciertos=0;
