@@ -180,8 +180,8 @@ public class EURMILLONES {
                 System.out.println("Inversion:\t"+(2.5*nIteracion)+" Eur"); // Precio del boleto 2,5€
                 System.out.println("Tu boleto: \t"+Arrays.toString(boletoApuesta));
                 System.out.println("El premiado: \t"+Arrays.toString(boletoPremiado)+"\n");
-       }while(nAciertos <= 4 && nEstrellas >= 0);  // TRUE continua, FALSE termina
-       
+       }while(nAciertos < 5 || nEstrellas < 1);  // TRUE continua, FALSE termina
+       // nAciertos < 5 || nEstrellas < 1  ==> Que salga un 5+1 o más
        System.out.println("\nFELICIDADES!! ");
     }
     
