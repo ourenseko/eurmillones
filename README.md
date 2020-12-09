@@ -23,7 +23,7 @@ Right-click on a Project name
 Select Build or Clean and Build
 
 
-Start jar file
+Ejecutar archivo .jar 
 ---
 Abrir "Documents\NetBeansProjects\EURMILLONES\dist"
 
