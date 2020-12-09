@@ -25,6 +25,8 @@ Select Build or Clean and Build
 
 Start jar file
 ---
-Open Powershell in yhe directory an typed:
+Abrir "Documents\NetBeansProjects\EURMILLONES\dist"
+
+Archivo, abrir en Power shell la ruta y escribir:
 
 java -jar "EURMILLONES.jar" 
