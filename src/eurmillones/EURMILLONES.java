@@ -44,6 +44,7 @@ Correciones:
 
 Errores:
 -En boleto manual si introduciomos una letra en vez de un numero el programa se rompe. Establecer control de errores
+-Al intoducir el tipo de boleto, si escribimos un texto superior a lo aceptable por el tipo de dato el programa se rompe. Establecer control de errores
 -Al intoducir numeros y estrellas, si escribimos un numero superior a lo aceptable por el tipo de dato el programa se rompe. Establecer control de errores
 
  */
@@ -123,6 +124,99 @@ public class EURMILLONES {
         boletoApuesta = ordenar(boletoApuesta);
         System.out.println("Su boleto: "+Arrays.toString(boletoApuesta)+"\n");
         
+// Pedimos al usuario el tipo de premio que queremos buscar
+        System.out.println("Categoría de premios:\n" +
+        "1ª \t(5 + 2 Aciertos)\n" +
+        "2ª \t(5 + 1 Aciertos)\n" +
+        "3ª \t(5 + 0 Aciertos)\n" +
+        "4ª \t(4 + 2 Aciertos)\n" +
+        "5ª \t(4 + 1 Aciertos)\n" +
+        "6ª \t(4 + 0 Aciertos)\n" +
+        "7ª \t(3 + 2 Aciertos)\n" +
+        "8ª \t(2 + 2 Aciertos)\n" +
+        "9ª \t(3 + 1 Aciertos)\n" +
+        "10ª \t(3 + 0 Aciertos)\n" +
+        "11ª \t(1 + 2 Aciertos)\n" +
+        "12ª \t(2 + 1 Aciertos)\n" +
+        "13ª \t(2 + 0 Aciertos)");
+        
+        
+        int aciertosNumeros, aciertosEstrellas;
+        /*
+        do{
+            System.out.println("Selecione aciertos en los numeros: (1, 5): ");
+            aciertosNumeros = teclado.nextInt();
+        }while(!intervaloCheck(aciertosNumeros, 1, 5));
+        do{
+            System.out.println("Selecione aciertos en las estrellas: (1, 5): ");
+            aciertosEstrellas = teclado.nextInt();
+        }while(!intervaloCheck(aciertosEstrellas, 1, 5));
+        */
+                
+        int aciertosCategoria=0;
+        do{
+            System.out.print("Selecione categoría: (1, 13): \n>>> ");
+            aciertosCategoria = teclado.nextInt();
+        }while(!intervaloCheck(aciertosCategoria, 1, 13));
+        
+        switch (aciertosCategoria) {
+                case 1:
+                    aciertosNumeros=5;
+                    aciertosEstrellas=2;
+                break;
+                case 2:
+                    aciertosNumeros=5;
+                    aciertosEstrellas=1;
+                break;
+                case 3:
+                    aciertosNumeros=5;
+                    aciertosEstrellas=0;
+                break;
+                case 4:
+                    aciertosNumeros=4;
+                    aciertosEstrellas=2;
+                break;       
+                case 5:
+                    aciertosNumeros=4;
+                    aciertosEstrellas=1;
+                break;         
+                case 6:
+                    aciertosNumeros=4;
+                    aciertosEstrellas=0;
+                break;                
+                case 7:
+                    aciertosNumeros=3;
+                    aciertosEstrellas=2;
+                break;                
+                case 8:
+                    aciertosNumeros=2;
+                    aciertosEstrellas=2;
+                break;                
+                case 9:
+                    aciertosNumeros=3;
+                    aciertosEstrellas=1;
+                break;                
+                case 10:
+                    aciertosNumeros=3;
+                    aciertosEstrellas=0;
+                break;                
+                case 11:
+                    aciertosNumeros=1;
+                    aciertosEstrellas=2;
+                break;                
+                case 12:
+                    aciertosNumeros=2;
+                    aciertosEstrellas=1;
+                break;          
+                case 13:
+                    aciertosNumeros=2;
+                    aciertosEstrellas=0;
+                break;         
+                default:
+                    aciertosNumeros=1;
+                    aciertosEstrellas=0;
+        }
+        
         long nIteracion=0;
         int nAciertos,  nEstrellas;
        do{
@@ -180,7 +274,7 @@ public class EURMILLONES {
                 System.out.println("Inversion:\t"+(2.5*nIteracion)+" Eur"); // Precio del boleto 2,5€
                 System.out.println("Tu boleto: \t"+Arrays.toString(boletoApuesta));
                 System.out.println("El premiado: \t"+Arrays.toString(boletoPremiado)+"\n");
-       }while(nAciertos < 5 || nEstrellas < 1);  // TRUE continua, FALSE termina
+       }while(nAciertos < aciertosNumeros || nEstrellas < aciertosEstrellas);  // TRUE continua, FALSE termina; Categoria seleccionada o superior.
        // nAciertos < 5 || nEstrellas < 1  ==> Que salga un 5+1 o más
        System.out.println("\nFELICIDADES!! ");
     }
