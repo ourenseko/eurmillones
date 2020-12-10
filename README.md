@@ -42,3 +42,8 @@ Ofuscar código y optimizar .jar (Conex. BD, etc)
 ---
 Proguard: https://www.guardsquare.com/es/productos/proguard
 Descargar: https://github.com/Guardsquare/proguard/releases
+
+
+ExcelsiorJet (dESCONTINUADO, De pago)
+
+jwrapper? - https://www.jwrapper.com/excelsior-jet-alternative
