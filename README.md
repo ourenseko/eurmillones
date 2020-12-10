@@ -44,6 +44,6 @@ Proguard: https://www.guardsquare.com/es/productos/proguard
 Descargar: https://github.com/Guardsquare/proguard/releases
 
 
-ExcelsiorJet (dESCONTINUADO, De pago)
+ExcelsiorJet (DESCONTINUADO, Profesional para distribuir applicaciones, De pago) - https://twitter.com/excelsiorjet?lang=es
 
 jwrapper? - https://www.jwrapper.com/excelsior-jet-alternative
