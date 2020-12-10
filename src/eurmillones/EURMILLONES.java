@@ -75,12 +75,12 @@ public class EURMILLONES {
         int[] boletoPremiado = new int[7];
         //boolean[] memo = new boolean[7]; // todos los valores true
         boolean memo[]={false, false, false, false, false, false, false};
+        Scanner teclado = new Scanner(System.in);
         
         boolean metodo=false;
         do {
             // Pedimos al usuario un metodo de boleto
             System.out.print("Boleto Automatico/Manual [A/M]\n>>> ");
-            Scanner teclado = new Scanner(System.in);
             String modo = teclado.next();
             switch(modo){
                 case "A": case "a": case "0": case ".":
