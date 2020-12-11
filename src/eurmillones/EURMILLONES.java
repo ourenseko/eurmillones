@@ -1,67 +1,38 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+EUROMILLONES SIMULATOR @ JAVA 
+        Reglas del juego:
+            Hay que elegir 5 numeros ente 1 y 50 y 2 estrellas entre 1 y 12, los numeros no se pueden repetir.
 
 
-    Resumen de los conocimientos obtenidos en Java
+DESARROLLO:
+        Notas:
+            -Se ha optado por verificar que el usuario introduce datos correctos en el momento que los introduce y no una vez compuesto el boleto.
+            -Con do-while se muestran los menus y con switch la operatividad del usuario
+            -en Python boletoApuesta[] ==> en Java Arrays.toString(boletoApuesta) 
+            -Sobra la correción en la que hacemos que no sume numeros ya acertados (memo[]). Si no se pueden repetir los numeros, esto ya no puede ocurrir. 
 
-        EUROMILLONES SIMULATOR @ JAVA TERMINAL
-            Reglas del juego:
-            Hay que elegir numeros ente 1 y 50 y estrellas entre 1 y 12, los numeros no se pueden repetir.
-                5 Numeros + 2 Estrellas
-            Sorteos:       
+        Correciones:
+            -Si no se ingresa un numero en el rango permitido vuelve a pedir el numero
+            -Externalizamos funciones que se repiten en el programa
+            -Ordenamos el numero y las estrellas de los boletos crecientemente 
+            -Si se ingrersa un numero repetido vuelve a pedir el numero 
 
-            Premios:
-                13ª Categoria           2 + 0
-                                        2 + 1
-                                        1 + 2
-                                        3 + 0
-                                        3 + 1
-                                        2 + 2
-                                        4 + 0
-                                        3 + 1
-                                        4 + 0
-                                        3 + 2
-                                        4 + 1
-                                        4 + 2
-                                        5 + 0
-                                        5 + 1
-                1ª Categoria            5 + 2
-
-Notas:
--Se ha optado por verificar que el usuario introduce datos correctos en el momento que los introduce y no una vez compuesto el boleto.
--Con do-while se muestran los menus y con switch la operatividad del usuario
--en Python boletoApuesta[] ==> en Java Arrays.toString(boletoApuesta) 
--Sobra la correción en la que hacemos que no sume numeros ya acertados (memo[]). Si no se pueden repetir los numeros, esto ya no puede ocurrir. 
-
-
-Correciones:
--Si no se ingresa un numero en el rango permitido vuelve a pedir el numero
--Externalizamos funciones que se repiten en el programa
--Ordenamos el numero y las estrellas de los boletos crecientemente 
--Si se ingrersa un numero repetido vuelve a pedir el numero 
-
-Errores:
--En boleto manual si introduciomos una letra en vez de un numero el programa se rompe. Establecer control de errores
--Al intoducir el tipo de boleto, si escribimos un texto superior a lo aceptable por el tipo de dato el programa se rompe. Establecer control de errores
--Al intoducir numeros y estrellas, si escribimos un numero superior a lo aceptable por el tipo de dato el programa se rompe. Establecer control de errores
+        Errores:
+            -En boleto manual si introduciomos una letra en vez de un numero el programa se rompe. Establecer control de errores
+            -Al intoducir el tipo de boleto, si escribimos un texto superior a lo aceptable por el tipo de dato el programa se rompe. Establecer control de errores
+            -Al intoducir numeros y estrellas, si escribimos un numero superior a lo aceptable por el tipo de dato el programa se rompe. Establecer control de errores
 
  */
 package eurmillones;
 
-import java.lang.Math; // Usamos random
+import java.lang.Math;
 import java.util.Arrays;
 import java.util.Scanner;
-
-
 /**
- *
  * @author manuelbaceiredo
- * @license MIT License 
- * @date 03/12/2020 - 09/12/2020
+ * @date 03/12/2020
  * @version v1.0 (Terminal)
- *  
  */
 public class EURMILLONES {
     /**
@@ -71,24 +42,35 @@ public class EURMILLONES {
         System.out.println("Make with Java - @soyprogramador.gif\n");
         System.out.println("\tEUROMILLONES SIMULATOR!!\n\t------------------------\n");
         
-        int[] boletoApuesta = new int[7]; 
+        int boletoApuesta[] = {0, 0, 0, 0, 0, 0, 0};
         int[] boletoPremiado = new int[7];
-        //boolean[] memo = new boolean[7]; // todos los valores true
+        /*
         boolean memo[]={false, false, false, false, false, false, false};
+        */
         Scanner teclado = new Scanner(System.in);
         
         boolean metodo=false;
         do {
-            // Pedimos al usuario un metodo de boleto
-            System.out.print("Boleto Automatico/Manual [A/M]\n>>> ");
+            /* 
+            Pedimos al usuario un metodo de boleto
+            */
+            System.out.print("Boleto Automatico? [S/N]\n>>> ");
             String modo = teclado.next();
             switch(modo){
-                case "A": case "a": case "0": case ".":
-                        // Boleto aleatorio
+                case "S": case "Y": case "Q": case "W": 
+                case "s": case "y": case "q": case "w": 
+                case "1": case "2": case "4": 
+                case "    ": case "º":
+                        /*
+                        Boleto aleatorio
+                        */
                         for (int i=0;i<7;i++){ // 0 1 2 3 4 5 6
                             if(i < 5){
                                 do{
-                                    boletoApuesta[i] = (int) (Math.random() * 51) + 1; //  (<tipo_de_dato>) (Math.random() * <numero_maximo_intervalo_cerrado>) + <valor_inicial=0_intervalo_abierto>;
+                                    boletoApuesta[i] = (int) (Math.random() * 51) + 1; 
+                                    /*  
+                                    (<tipo_de_dato>) (Math.random() * <numero_maximo_intervalo_cerrado>) + <valor_inicial=0_intervalo_abierto>;
+                                    */
                                 }while(numeroCheck(boletoApuesta, boletoApuesta[i], i));
                             }else{
                                 do{
@@ -97,17 +79,22 @@ public class EURMILLONES {
                             }
                         }
                 break;
-                case "M": case "m": case "1":
-                        // Boleto definido por el usuario
+                case "N": case"I": case "P":
+                case "n": case"i": case "p":
+                case "0":  case "9": 
+                case ".": case"'":  case "": case " ":
+                        /*
+                        Boleto definido por el usuario
+                        */
                         for (int i=0;i<7;i++){ // 0 1 2 3 4 5 6
                             if(i < 5){
                                 do{
                                     System.out.print("Ingrese el "+(i+1)+"º digito (1, 50)\n>>> ");
                                     boletoApuesta[i] = teclado.nextInt();
-                                    
-
-                                }while(!intervaloCheck(boletoApuesta[i], 1, 50) || numeroCheck(boletoApuesta, boletoApuesta[i], i) ); // 1<=x<=50 && ∃x∈ boletoApuesta  
-                                
+                                }while(!intervaloCheck(boletoApuesta[i], 1, 50) || numeroCheck(boletoApuesta, boletoApuesta[i], i) ); 
+                                /*
+                                1<=x<=50 && ∃x∈ boletoApuesta  
+                                */
                             }else{
                                 do{
                                     System.out.print("Ingrese la "+(i-4)+"º estrella (1, 12)\n>>> ");
@@ -119,12 +106,14 @@ public class EURMILLONES {
                 default: metodo=true;
             }
         } while (metodo);
-        
-        // Ordenamos ASCendentemente y mostramos el boleto elegido
+        /*
+        Ordenamos ASCendentemente y mostramos el boleto elegido
+        */
         boletoApuesta = ordenar(boletoApuesta);
         System.out.println("Su boleto: "+Arrays.toString(boletoApuesta)+"\n");
-        
-// Pedimos al usuario el tipo de premio que queremos buscar
+/*
+        Pedimos al usuario la categoría de premio a la que queremos apuntar
+*/
         System.out.println("Categoría de premios:\n" +
         "1ª \t(5 + 2 Aciertos)\n" +
         "2ª \t(5 + 1 Aciertos)\n" +
@@ -139,10 +128,10 @@ public class EURMILLONES {
         "11ª \t(1 + 2 Aciertos)\n" +
         "12ª \t(2 + 1 Aciertos)\n" +
         "13ª \t(2 + 0 Aciertos)");
-        
-        
         int aciertosNumeros, aciertosEstrellas;
-        /*
+        /* 
+        Es preferible pedir unicamente la categoria para pedir menos datos al usuario.
+        
         do{
             System.out.println("Selecione aciertos en los numeros: (1, 5): ");
             aciertosNumeros = teclado.nextInt();
@@ -151,8 +140,7 @@ public class EURMILLONES {
             System.out.println("Selecione aciertos en las estrellas: (1, 5): ");
             aciertosEstrellas = teclado.nextInt();
         }while(!intervaloCheck(aciertosEstrellas, 1, 5));
-        */
-                
+        */   
         int aciertosCategoria=0;
         do{
             System.out.print("Selecione categoría: (1, 13): \n>>> ");
@@ -222,11 +210,15 @@ public class EURMILLONES {
        do{
                 nAciertos=0;
                 nEstrellas=0;
+                /* 
                 for (int i=0;i<memo.length;i++){
                     memo[i] = false;
                 }
+                */
                 nIteracion++;     
-                // Asignamos aleatoriamente numeros a boletoPremiado
+                /*
+                Asignamos aleatoriamente numeros a boletoPremiado
+                */
                 for (int i=0;i<7;i++){ // (0 , 6)
                     if(i < 5){
                         do{
@@ -240,47 +232,67 @@ public class EURMILLONES {
                 }
                 boletoPremiado = ordenar(boletoPremiado);
                 
-                //Aciertos en boletoApuesta y boletoEstrellas
-                // Obtiene un numero de boletoApuesta y escanea todas las posiciones del boletoPremio en busca de si coinciden 
-                //  Anotamos la posicion de los numeros que ya han sido acertados para que no se repitan
-                     
+                /*
+                Aciertos en boletoApuesta y boletoEstrellas
+                Obtiene un numero de boletoApuesta y escanea todas las posiciones del boletoPremio en busca de si coinciden 
+                Anotamos la posicion de los numeros que ya han sido acertados para que no los cuente si hay otro numero igual (Omitido, es inicesario al no poder repetirse)
+                */
                 for (int j=0;j<boletoPremiado.length;j++){ 
                     for (int i=0;i<boletoPremiado.length;i++){
-                        if (j<5 && i<5){ // (0.0 , 0.4) U (1.0 , 1.4) U (2.0 , 2.4) U (3.0 , 3.4) U (4.0 , 4.4)
+                        if (j<5 && i<5){ 
+                            /* 
+                            (0.0 , 0.4) U (1.0 , 1.4) U (2.0 , 2.4) U (3.0 , 3.4) U (4.0 , 4.4)
+                            */
                             if(boletoApuesta[j]==boletoPremiado[i]) {
+                                /*
                                 if (!memo[i]){ // true numero ya acertado
+                                */
                                     nAciertos++;
+                                   /* 
                                     memo[i]=true;
-                                    //System.out.println("Numero acertado: "+boletoApuesta[j]);
+                                    System.out.println("Numero acertado: "+boletoApuesta[j]);
                                 }
+                                   */
                             }
                         }
                         else if(j>=5 && i>=5){ // (5.5 , 5.6) U (6.5 , 6.6)
                             if(boletoApuesta[j]==boletoPremiado[i]){
+                                /*
                                 if (!memo[i]){
+                                */
                                     nEstrellas++;
+                                    /*
                                     memo[i]=true;
                                     //System.out.println("Estrella acertada: "+boletoApuesta[j]);
                                 }
+                                    */
                             }
                         }
-                        //Nothing (5.0 , 5.4) U (6.0 , 6.4)
-                        //LOGs: System.out.println("SCAN: \tj:"+j+"="+boletoApuesta[j]+"\ti:"+i+"="+boletoPremiado[i]+"\t"+memo[i]);
+                        /*
+                        Nothing (5.0 , 5.4) U (6.0 , 6.4)
+                        System.out.println("SCAN: \tj:"+j+"="+boletoApuesta[j]+"\ti:"+i+"="+boletoPremiado[i]+"\t"+memo[i]);
+                        */
                     }
                 }
-                // Mostramos el numero de intento, la inversión total, el numero de boleto y el boleto premiado
+                /*
+                Mostramos el numero de intento, la inversión total, el numero de boleto y el boleto premiado
+                */
                 System.out.println("Intento: \tnº"+nIteracion);
                 System.out.println("Resultado: \t"+nAciertos+"+"+nEstrellas);
                 System.out.println("Inversion:\t"+(2.5*nIteracion)+" Eur"); // Precio del boleto 2,5€
                 System.out.println("Tu boleto: \t"+Arrays.toString(boletoApuesta));
                 System.out.println("El premiado: \t"+Arrays.toString(boletoPremiado)+"\n");
        }while(nAciertos < aciertosNumeros || nEstrellas < aciertosEstrellas);  // TRUE continua, FALSE termina; Categoria seleccionada o superior.
-       // nAciertos < 5 || nEstrellas < 1  ==> Que salga un 5+1 o más
+       /* 
+       nAciertos < 5 || nEstrellas < 1  ==> Que salga un 5+1 o más 
+       */
        System.out.println("\nFELICIDADES!! ");
     }
      
     
-    //Usamos el metodo para saber si n es x<=n<=y
+    /*
+    Usamos el metodo para saber si n es x<=n<=y
+    */
     public static boolean intervaloCheck(int n, int x, int y) {
         boolean intervalo=false;
         if (n >= x && n <= y){
@@ -290,10 +302,14 @@ public class EURMILLONES {
     }
 
     
-    //Usamos el metodo para ordenar los numeros arreglo[] crecientemente
+    /*
+    Usamos el metodo para ordenar los numeros arreglo[] crecientemente
+    */
     public static int[] ordenar(int[] arreglo){ 
         int memo;
-        // burbujeamos las posiciones 0, 1, 2, 3 y 4
+        /* 
+        burbujeamos las posiciones 0, 1, 2, 3 y 4 
+        */
         for(int j=0;j<4;j++){
                 for (int i=0;i<4;i++){ 
                     if (arreglo[i]>arreglo[i+1]){
@@ -303,7 +319,9 @@ public class EURMILLONES {
                     }
                 }
         }
-        // burbujeamos las posicones 5 y 6
+        /* 
+        burbujeamos las posicones 5 y 6 
+        */
         if (arreglo[5]>arreglo[6]){
             memo = arreglo[5];
             arreglo[5] = arreglo[6];
@@ -313,17 +331,24 @@ public class EURMILLONES {
     } 
     
     
-    //Usamos el metodo para saber si ∃ n ∈ arreglo
+    /*
+    Usamos el metodo para saber si ∃ n ∈ arreglo
+    */
     public static boolean numeroCheck(int[] arreglo, int n, int arrayPosicion){ 
         boolean seRepite = false;
         for(int i=0;i<arreglo.length;i++){ 
-            
             if (i>=0 && i<5 && arrayPosicion <5){
-                if(n == arreglo[i] &&  i != arrayPosicion){ //Si n es igual a algun numero del array && Que las posicion del numero en el array es diferente a la del numero actual
-                    //System.out.println(n+"=="+arreglo[i]+"\t"+i+"!="+arrayPosicion);
+                if(n == arreglo[i] &&  i != arrayPosicion){ 
+                    /*
+                    Si n es igual a algun numero del array && Que las posicion del numero en el array es diferente a la del numero actual
+                    System.out.println(n+"=="+arreglo[i]+"\t"+i+"!="+arrayPosicion);
+                    */
                     seRepite = true;
-                }// numero-introducido / posicion-del-introducido / array[posicion-en-el-array]=numero-en-el-array / se-ha-cumplido?
-                //System.out.println("SEARCH: n="+n+"\t position="+arrayPosicion+" array["+i+"]="+arreglo[i]+"\t"+seRepite);
+                }
+                /*
+                numero-introducido / posicion-del-introducido / array[posicion-en-el-array]=numero-en-el-array / se-ha-cumplido?
+                System.out.println("SEARCH: n="+n+"\t position="+arrayPosicion+" array["+i+"]="+arreglo[i]+"\t"+seRepite);
+                */
             }
             else if(i>=5 && arrayPosicion >=5){
                 if (arreglo[6]==arreglo[5]){
