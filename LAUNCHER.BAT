@@ -1,7 +1,0 @@
-@ECHO OFF
-
-ECHO NUMERO DE PROCESOS QUE DESEA LANZAR?
-REM SET N=>>> 
-REM FOR  %%NombreVariable IN  (lista)  DO  comando 
-REM START java -jar "EURMILLONES.jar"
-EXIT
