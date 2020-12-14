@@ -49,6 +49,16 @@ public class EURMILLONES {
         */
         Scanner teclado = new Scanner(System.in);
         
+            
+            
+        System.out.println("Elije un juego: \n>>> ");
+            
+            
+            
+        /*
+                Externalizar funciones del do while
+        */
+            
         boolean metodo=false;
         do {
             /* 
@@ -62,6 +72,8 @@ public class EURMILLONES {
                 case "1": case "2": case "4": 
                 case "    ": case "º":
                         /*
+                        Funcion generar boleto con longitud variables
+                        
                         Boleto aleatorio
                         */
                         for (int i=0;i<7;i++){ // 0 1 2 3 4 5 6
@@ -84,6 +96,8 @@ public class EURMILLONES {
                 case "0":  case "9": 
                 case ".": case"'":  case "": case " ":
                         /*
+                        Longitud del boleto segun el tipo de juego
+                        
                         Boleto definido por el usuario
                         */
                         for (int i=0;i<7;i++){ // 0 1 2 3 4 5 6
@@ -359,5 +373,20 @@ public class EURMILLONES {
         return seRepite;
     } 
     
+        
+    public static int[] nuevoBoleto(int[] arreglo){ 
+            
+            
+            
+            return arreglo;
+    }
+    public static int[] generarBoleto(int[] arreglo){ 
+            
+            
+            
+            return arreglo;
+    }
+    
+        
 
 }
