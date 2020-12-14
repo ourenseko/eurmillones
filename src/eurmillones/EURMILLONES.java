@@ -60,7 +60,7 @@ public class EURMILLONES {
         }while(!juego);
         
         jugar =0;
-        int longitudBoleto;
+        int longitudBoleto=0;
         switch(jugar){
             case 1: /* EUROMILLONES*/
                 longitudBoleto = 7;
@@ -95,7 +95,8 @@ public class EURMILLONES {
                     
                         Boleto aleatorio
                         */
-                        nuevoBoletoApuestaAuto(7);
+                        //nuevoBoletoApuestaAuto(7); Para Euromillones
+                        nuevoBoletoApuestaAuto(longitudBoleto);
                         
                 break;
                 case "N": case"I": case "P":
@@ -107,10 +108,9 @@ public class EURMILLONES {
                     
                         Boleto definido por el usuario
                         */
-                        nuevoBoletoApuestaManual(7);
+                        //nuevoBoletoApuestaManual(7); Para Euromillones
+                        nuevoBoletoApuestaManual(longitudBoleto);
                     
-                    
-                          
                 break;
                 default: metodo=true;
             }
@@ -122,14 +122,15 @@ public class EURMILLONES {
         System.out.println("Su boleto: "+Arrays.toString(boletoApuesta)+"\n");
         
         
-        
-        
-        
-        
+
 /*
         MOSTRAR SEGUN EL TIPO DE JUEG0
         Pedimos al usuario la categoría de premio a la que queremos apuntar
 */
+
+        switch(jugar){
+            
+        }
         System.out.println("Categoría de premios:\n" +
         "1ª \t(5 + 2 Aciertos)\n" +
         "2ª \t(5 + 1 Aciertos)\n" +
@@ -235,61 +236,25 @@ public class EURMILLONES {
                 /*
                 Asignamos aleatoriamente numeros a boletoPremiado
                 */
-                for (int i=0;i<7;i++){ // (0 , 6)
-                    if(i < 5){
-                        do{
-                            boletoPremiado[i] = (int) (Math.random() * 51) + 1;
-                        }while(numeroCheck(boletoPremiado, boletoPremiado[i], i));
-                    }else{
-                        do{
-                            boletoPremiado[i] = (int) (Math.random() * 13) + 1;
-                        }while(numeroCheck(boletoPremiado, boletoPremiado[i], i));   
-                    }
-                }
+                
+                
+                
+                nuevoBoletoPremio(7);
+                
+                
+                
                 boletoPremiado = ordenar(boletoPremiado);
+                
+                compararBoletos(boletoPremiado, boletoApuesta, nAciertos, nEstrellas); // devuelve nAciertos y nEstrellas 
+                
+                
                 
                 /*
                 Aciertos en boletoApuesta y boletoEstrellas
                 Obtiene un numero de boletoApuesta y escanea todas las posiciones del boletoPremio en busca de si coinciden 
                 Anotamos la posicion de los numeros que ya han sido acertados para que no los cuente si hay otro numero igual (Omitido, es inicesario al no poder repetirse)
                 */
-                for (int j=0;j<boletoPremiado.length;j++){ 
-                    for (int i=0;i<boletoPremiado.length;i++){
-                        if (j<5 && i<5){ 
-                            /* 
-                            (0.0 , 0.4) U (1.0 , 1.4) U (2.0 , 2.4) U (3.0 , 3.4) U (4.0 , 4.4)
-                            */
-                            if(boletoApuesta[j]==boletoPremiado[i]) {
-                                /*
-                                if (!memo[i]){ // true numero ya acertado
-                                */
-                                    nAciertos++;
-                                   /* 
-                                    memo[i]=true;
-                                    System.out.println("Numero acertado: "+boletoApuesta[j]);
-                                }
-                                   */
-                            }
-                        }
-                        else if(j>=5 && i>=5){ // (5.5 , 5.6) U (6.5 , 6.6)
-                            if(boletoApuesta[j]==boletoPremiado[i]){
-                                /*
-                                if (!memo[i]){
-                                */
-                                    nEstrellas++;
-                                    /*
-                                    memo[i]=true;
-                                    //System.out.println("Estrella acertada: "+boletoApuesta[j]);
-                                }
-                                    */
-                            }
-                        }
-                        /*
-                        Nothing (5.0 , 5.4) U (6.0 , 6.4)
-                        System.out.println("SCAN: \tj:"+j+"="+boletoApuesta[j]+"\ti:"+i+"="+boletoPremiado[i]+"\t"+memo[i]);
-                        */
-                    }
-                }
+
                 /*
                 Mostramos el numero de intento, la inversión total, el numero de boleto y el boleto premiado
                 */
@@ -373,11 +338,11 @@ public class EURMILLONES {
             }
         }
         return seRepite;
-    } 
+    }
     
     
     
-    public static int[] nuevoBoletoApuestaAuto(int longitud){ 
+    public static int[] nuevoBoletoApuestaAuto(int longitud){
                         int[] boletoApuesta = new int[longitud];
                         for (int i=0;i<7;i++){ 
                             if(i < 5){
@@ -398,6 +363,7 @@ public class EURMILLONES {
             
                         return boletoApuesta;
     }
+    
     
         
     public static int[] nuevoBoletoApuestaManual(int longitud){ 
@@ -426,13 +392,50 @@ public class EURMILLONES {
     
     
     
-    
     public static int[] nuevoBoletoPremio(int longitud){ 
                         int[] boletoPremiado = new int[longitud];
                         
-            
+                        for (int i=0;i<longitud;i++){ 
+                            if(i < 5){    //////////////////////////////// SOLO PARA EUROMILLONES
+                                do{
+                                    boletoPremiado[i] = (int) (Math.random() * 51) + 1;
+                                }while(numeroCheck(boletoPremiado, boletoPremiado[i], i));
+                            }else{
+                                do{
+                                    boletoPremiado[i] = (int) (Math.random() * 13) + 1;
+                                }while(numeroCheck(boletoPremiado, boletoPremiado[i], i));   
+                            }
+                        }
             
                         return boletoPremiado;
+    }
+    
+    
+    
+    public static int [] compararBoletos(int[] boletoPremiado, int[] boletoApuesta, int nAciertos, int nEstrellas) {
+                for (int j=0;j<boletoPremiado.length;j++){
+                    for (int i=0;i<boletoPremiado.length;i++){
+                        if (j<5 && i<5){ 
+                            /* 
+                            (0.0 , 0.4) U (1.0 , 1.4) U (2.0 , 2.4) U (3.0 , 3.4) U (4.0 , 4.4)
+                            */
+                            if(boletoApuesta[j]==boletoPremiado[i]) {
+                                    nAciertos++;
+                            }
+                        }
+                        else if(j>=5 && i>=5){ // (5.5 , 5.6) U (6.5 , 6.6)
+                            if(boletoApuesta[j]==boletoPremiado[i]){
+                                    nEstrellas++;
+                            }
+                        }
+                        /*
+                        Nothing (5.0 , 5.4) U (6.0 , 6.4)
+                        System.out.println("SCAN: \tj:"+j+"="+boletoApuesta[j]+"\ti:"+i+"="+boletoPremiado[i]+"\t"+memo[i]);
+                        */
+                    }
+                }
+                int resultado[] = {nAciertos, nEstrellas}; //Ejemplo: 4+0,  5+2
+                return resultado;
     }
     
         
