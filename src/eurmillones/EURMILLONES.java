@@ -118,7 +118,7 @@ public class EURMILLONES {
         /*
         Ordenamos ASCendentemente y mostramos el boleto elegido
         */
-        boletoApuesta = ordenar(boletoApuesta);
+        boletoApuesta = ordenarBoletoAsc(boletoApuesta);
         System.out.println("Su boleto: "+Arrays.toString(boletoApuesta)+"\n");
         
         
@@ -128,126 +128,144 @@ public class EURMILLONES {
         Pedimos al usuario la categoría de premio a la que queremos apuntar
 */
 
+
+
+        int aciertosNumeros=0;
+        int aciertosEstrellas=0;
+        
         switch(jugar){
-            
+            case 1:
+                        System.out.println("Categoría de premios:\n" +
+                        "1ª \t(5 + 2 Aciertos)\n" +
+                        "2ª \t(5 + 1 Aciertos)\n" +
+                        "3ª \t(5 + 0 Aciertos)\n" +
+                        "4ª \t(4 + 2 Aciertos)\n" +
+                        "5ª \t(4 + 1 Aciertos)\n" +
+                        "6ª \t(4 + 0 Aciertos)\n" +
+                        "7ª \t(3 + 2 Aciertos)\n" +
+                        "8ª \t(2 + 2 Aciertos)\n" +
+                        "9ª \t(3 + 1 Aciertos)\n" +
+                        "10ª \t(3 + 0 Aciertos)\n" +
+                        "11ª \t(1 + 2 Aciertos)\n" +
+                        "12ª \t(2 + 1 Aciertos)\n" +
+                        "13ª \t(2 + 0 Aciertos)");
+                        
+                        /* 
+                        Es preferible pedir unicamente la categoria para pedir menos datos al usuario.
+
+                        do{
+                            System.out.println("Selecione aciertos en los numeros: (1, 5): ");
+                            aciertosNumeros = teclado.nextInt();
+                        }while(!intervaloCheck(aciertosNumeros, 1, 5));
+                        do{
+                            System.out.println("Selecione aciertos en las estrellas: (1, 5): ");
+                            aciertosEstrellas = teclado.nextInt();
+                        }while(!intervaloCheck(aciertosEstrellas, 1, 5));
+                        */   
+                        int aciertosCategoria=0;
+                        do{
+                            System.out.print("Selecione categoría: (1, 13): \n>>> ");
+                            aciertosCategoria = teclado.nextInt();
+                        }while(!intervaloCheck(aciertosCategoria, 1, 13));
+
+                        switch (aciertosCategoria) {
+                                case 1:
+                                    aciertosNumeros=5;
+                                    aciertosEstrellas=2;
+                                break;
+                                case 2:
+                                    aciertosNumeros=5;
+                                    aciertosEstrellas=1;
+                                break;
+                                case 3:
+                                    aciertosNumeros=5;
+                                    aciertosEstrellas=0;
+                                break;
+                                case 4:
+                                    aciertosNumeros=4;
+                                    aciertosEstrellas=2;
+                                break;       
+                                case 5:
+                                    aciertosNumeros=4;
+                                    aciertosEstrellas=1;
+                                break;         
+                                case 6:
+                                    aciertosNumeros=4;
+                                    aciertosEstrellas=0;
+                                break;                
+                                case 7:
+                                    aciertosNumeros=3;
+                                    aciertosEstrellas=2;
+                                break;                
+                                case 8:
+                                    aciertosNumeros=2;
+                                    aciertosEstrellas=2;
+                                break;                
+                                case 9:
+                                    aciertosNumeros=3;
+                                    aciertosEstrellas=1;
+                                break;                
+                                case 10:
+                                    aciertosNumeros=3;
+                                    aciertosEstrellas=0;
+                                break;                
+                                case 11:
+                                    aciertosNumeros=1;
+                                    aciertosEstrellas=2;
+                                break;                
+                                case 12:
+                                    aciertosNumeros=2;
+                                    aciertosEstrellas=1;
+                                break;          
+                                case 13:
+                                    aciertosNumeros=2;
+                                    aciertosEstrellas=0;
+                                break;         
+                                default:
+                                    aciertosNumeros=1;
+                                    aciertosEstrellas=0;
+                        }
+            break;
+            case 2: //LOTERIA NAVIDAD
+                
+            break;
+            default: 
+                
         }
-        System.out.println("Categoría de premios:\n" +
-        "1ª \t(5 + 2 Aciertos)\n" +
-        "2ª \t(5 + 1 Aciertos)\n" +
-        "3ª \t(5 + 0 Aciertos)\n" +
-        "4ª \t(4 + 2 Aciertos)\n" +
-        "5ª \t(4 + 1 Aciertos)\n" +
-        "6ª \t(4 + 0 Aciertos)\n" +
-        "7ª \t(3 + 2 Aciertos)\n" +
-        "8ª \t(2 + 2 Aciertos)\n" +
-        "9ª \t(3 + 1 Aciertos)\n" +
-        "10ª \t(3 + 0 Aciertos)\n" +
-        "11ª \t(1 + 2 Aciertos)\n" +
-        "12ª \t(2 + 1 Aciertos)\n" +
-        "13ª \t(2 + 0 Aciertos)");
-        int aciertosNumeros, aciertosEstrellas;
-        /* 
-        Es preferible pedir unicamente la categoria para pedir menos datos al usuario.
         
-        do{
-            System.out.println("Selecione aciertos en los numeros: (1, 5): ");
-            aciertosNumeros = teclado.nextInt();
-        }while(!intervaloCheck(aciertosNumeros, 1, 5));
-        do{
-            System.out.println("Selecione aciertos en las estrellas: (1, 5): ");
-            aciertosEstrellas = teclado.nextInt();
-        }while(!intervaloCheck(aciertosEstrellas, 1, 5));
-        */   
-        int aciertosCategoria=0;
-        do{
-            System.out.print("Selecione categoría: (1, 13): \n>>> ");
-            aciertosCategoria = teclado.nextInt();
-        }while(!intervaloCheck(aciertosCategoria, 1, 13));
-        
-        switch (aciertosCategoria) {
-                case 1:
-                    aciertosNumeros=5;
-                    aciertosEstrellas=2;
-                break;
-                case 2:
-                    aciertosNumeros=5;
-                    aciertosEstrellas=1;
-                break;
-                case 3:
-                    aciertosNumeros=5;
-                    aciertosEstrellas=0;
-                break;
-                case 4:
-                    aciertosNumeros=4;
-                    aciertosEstrellas=2;
-                break;       
-                case 5:
-                    aciertosNumeros=4;
-                    aciertosEstrellas=1;
-                break;         
-                case 6:
-                    aciertosNumeros=4;
-                    aciertosEstrellas=0;
-                break;                
-                case 7:
-                    aciertosNumeros=3;
-                    aciertosEstrellas=2;
-                break;                
-                case 8:
-                    aciertosNumeros=2;
-                    aciertosEstrellas=2;
-                break;                
-                case 9:
-                    aciertosNumeros=3;
-                    aciertosEstrellas=1;
-                break;                
-                case 10:
-                    aciertosNumeros=3;
-                    aciertosEstrellas=0;
-                break;                
-                case 11:
-                    aciertosNumeros=1;
-                    aciertosEstrellas=2;
-                break;                
-                case 12:
-                    aciertosNumeros=2;
-                    aciertosEstrellas=1;
-                break;          
-                case 13:
-                    aciertosNumeros=2;
-                    aciertosEstrellas=0;
-                break;         
-                default:
-                    aciertosNumeros=1;
-                    aciertosEstrellas=0;
-        }
+        /*
+
+LOTERIA NAVIDAD
+
+5 NUMEROS (0, 9)
+170 SERIES  (PDEN SER MAS) DESVIACION 2
+
+1 SERIE 20 EUROS
+1 BILLETE 200 EUROS
+
+
+*/
         
         long nIteracion=0;
         int nAciertos,  nEstrellas;
+        int resultado[] = {0, 0};
+        
+        
+        /*
+            Declarar variables segun el tipo de juego
+        
+        
+        
+        */
+        
        do{
                 nAciertos=0;
                 nEstrellas=0;
-                /* 
-                for (int i=0;i<memo.length;i++){
-                    memo[i] = false;
-                }
-                */
                 nIteracion++;     
-                /*
-                Asignamos aleatoriamente numeros a boletoPremiado
-                */
-                
-                
-                
                 nuevoBoletoPremio(7);
+                boletoPremiado = ordenarBoletoAsc(boletoPremiado);
                 
-                
-                
-                boletoPremiado = ordenar(boletoPremiado);
-                
-                compararBoletos(boletoPremiado, boletoApuesta, nAciertos, nEstrellas); // devuelve nAciertos y nEstrellas 
-                
-                
+                resultado = compararBoletos(boletoPremiado, boletoApuesta, nAciertos, nEstrellas); // devuelve nAciertos y nEstrellas 
                 
                 /*
                 Aciertos en boletoApuesta y boletoEstrellas
@@ -263,7 +281,12 @@ public class EURMILLONES {
                 System.out.println("Inversion:\t"+(2.5*nIteracion)+" Eur"); // Precio del boleto 2,5€
                 System.out.println("Tu boleto: \t"+Arrays.toString(boletoApuesta));
                 System.out.println("El premiado: \t"+Arrays.toString(boletoPremiado)+"\n");
-       }while(nAciertos < aciertosNumeros || nEstrellas < aciertosEstrellas);  // TRUE continua, FALSE termina; Categoria seleccionada o superior.
+       }while(resultado[0] < aciertosNumeros || resultado[1] < aciertosEstrellas);  
+       /* 
+       TRUE continua, FALSE termina; Categoria seleccionada o superior. 
+            PARA EUROMILLONES: resultado[0] < aciertosNumeros || resultado[1] < aciertosEstrellas
+            PARA LOTERIA NAVIDAD: 
+       */
        /* 
        nAciertos < 5 || nEstrellas < 1  ==> Que salga un 5+1 o más 
        */
@@ -284,9 +307,9 @@ public class EURMILLONES {
 
     
     /*
-    Usamos el metodo para ordenar los numeros arreglo[] crecientemente
+    Usamos el metodo para ordenarBoletoAsc los numeros arreglo[] crecientemente
     */
-    public static int[] ordenar(int[] arreglo){ 
+    public static int[] ordenarBoletoAsc(int[] arreglo){ 
         int memo;
         /* 
         burbujeamos las posiciones 0, 1, 2, 3 y 4 
@@ -313,7 +336,7 @@ public class EURMILLONES {
     
     
     /*
-    Usamos el metodo para saber si ∃ n ∈ arreglo
+    Usamos el metodo para saber si Existe n Contenido en arreglo
     */
     public static boolean numeroCheck(int[] arreglo, int n, int arrayPosicion){ 
         boolean seRepite = false;
@@ -341,7 +364,9 @@ public class EURMILLONES {
     }
     
     
-    
+    /*
+    Usamos el metodo nuevoBoletoApuestaAuto para generar un boleto automaticamente con el que juega el ususario (Esta funcion es prescindible si se usa la  generarBoleto y se asigna a la variable del usuario)
+    */
     public static int[] nuevoBoletoApuestaAuto(int longitud){
                         int[] boletoApuesta = new int[longitud];
                         for (int i=0;i<7;i++){ 
@@ -365,7 +390,9 @@ public class EURMILLONES {
     }
     
     
-        
+     /*
+    Usamos el metodo nuevoBoletoApuestaAuto para generar un boleto definido por el usuario con el que vamos a jugar.
+    */
     public static int[] nuevoBoletoApuestaManual(int longitud){ 
                         int[] boletoApuesta = new int[longitud];
 
@@ -391,7 +418,9 @@ public class EURMILLONES {
     }
     
     
-    
+     /*
+    Usamos el metodo nuevoBoletoPremio para generar un boleto automaticamente
+    */
     public static int[] nuevoBoletoPremio(int longitud){ 
                         int[] boletoPremiado = new int[longitud];
                         
