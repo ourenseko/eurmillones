@@ -23,6 +23,7 @@ package eurmillones;
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Collections; //.sort
 /**
  * @author manuelbaceiredo
  * @date 03/12/2020
