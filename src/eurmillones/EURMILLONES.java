@@ -77,7 +77,6 @@ public class EURMILLONES {
         
         
 
-            
         boolean metodo=false;
         do {
             /* 
