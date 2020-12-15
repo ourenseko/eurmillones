@@ -118,7 +118,7 @@ public class EURMILLONES {
         Ordenamos ASCendentemente y mostramos el boleto elegido
         */
         boletoApuesta = ordenarBoletoAsc(boletoApuesta);
-        System.out.println("Su boleto: "+Arrays.toString(boletoApuesta)+"\n");
+        System.out.println("Su boleto: "+Arrays.toString(boletoApuesta.substring(1, boletoApuesta.length()-1))+"\n");
         
         
 
@@ -278,8 +278,8 @@ LOTERIA NAVIDAD
                 System.out.println("Intento: \tnº"+nIteracion);
                 System.out.println("Resultado: \t"+nAciertos+"+"+nEstrellas);
                 System.out.println("Inversion:\t"+(2.5*nIteracion)+" Eur"); // Precio del boleto 2,5€
-                System.out.println("Tu boleto: \t"+Arrays.toString(boletoApuesta));
-                System.out.println("El premiado: \t"+Arrays.toString(boletoPremiado)+"\n");
+                System.out.println("Tu boleto: \t"+Arrays.toString(boletoApuesta.substring(1, boletoApuesta.length()-1)));
+                System.out.println("El premiado: \t"+Arrays.toString(boletoPremiado.substring(1, boletoPremiado.length()-1))+"\n");
        }while(resultado[0] < aciertosNumeros || resultado[1] < aciertosEstrellas);  
        /* 
        TRUE continua, FALSE termina; Categoria seleccionada o superior. 
