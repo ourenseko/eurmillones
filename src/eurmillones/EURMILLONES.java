@@ -34,6 +34,8 @@ public class EURMILLONES {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    try{
+            
         System.out.println("Make with Java - @soyprogramador.gif\n");
         System.out.println("\tSIMULATOR DE LOTERIA!!\n\t----------------------\n");
         
@@ -291,6 +293,10 @@ LOTERIA NAVIDAD
        nAciertos < 5 || nEstrellas < 1  ==> Que salga un 5+1 o más 
        */
        System.out.println("\nFELICIDADES!! ");
+    }catch(Exception e){
+        System.err.println("(^.^)/ (._.)");
+        e.printStackTrace(); // Reiniciar el programa
+    }
     }
      
     
