@@ -15,3 +15,10 @@ WHO TO PLAY
 
 6.- Return for PLAY!
 
+
+
+Preview:
+
+![image](https://user-images.githubusercontent.com/25538565/156268130-285aa416-6c11-4da3-841e-82c5b026165f.png)
+
+![image](https://user-images.githubusercontent.com/25538565/156268208-011fee55-a99d-42f3-a07e-391aaf364360.png)
