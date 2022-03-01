@@ -1,7 +1,8 @@
 # Euromillones simulator!
+Juego de consola de comandos
 
 
-WHO TO PLAY
+WHO TO RUN
 ---
 1.- Download the firts Release
 
@@ -14,6 +15,17 @@ WHO TO PLAY
 5.- The command shoul be: java -jar "namefile.jar"
 
 6.- Return for PLAY!
+
+
+HOW TO PLAY
+---
+Selecciona un boleto manual (M) o automatico (A) introduciendo M o A
+
+Si seleccionas manual (M) deveras introducir 5 números de tu boleto del 1 al 50 diferentes y 2 estrellas del 1 al 12 diferentes
+
+Selecciona una categoría mínima de premio a la que usted aspira
+
+¿ES HOY SU DIA DE SUERTE? ¡PRUEBELO!
 
 
 
