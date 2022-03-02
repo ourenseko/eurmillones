@@ -2,8 +2,11 @@
 Juego de consola de comandos
 
 
+
 WHO TO RUN
 ---
+*Required install Java Runtime
+
 1.- Download the firts Release
 
 2.- Open a cmd
