@@ -7,7 +7,7 @@ WHO TO RUN
 ---
 *Required install of Java Runtime*
 
-1.- Download the firts Release
+1.- Download the Release (https://github.com/ourenseko/eurmillones/releases/tag/1.0)
 
 2.- Open a cmd
 
