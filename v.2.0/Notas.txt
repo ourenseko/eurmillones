@@ -6,9 +6,12 @@ Para mejor experiencia de uso:
 * Contar los premios obtenidos en cada categoría
 * Contar el número de dias, meses y años (2 sorteos = 1 semana)
 * Crear una interfaz gráfica
+* Crear la intefaz basada en un bot de Telegram (Se necesita un dominio https, un host y estudiar la API de Telegram)
+
 
 Para retabilizar el software:
 * Crear varias modalidades de apuesta
-* Apostar con criptomonedas (se necesitaria un cliente y operar con wallets)
-* Crear un token propio (se necesitaría ser aceptado en un exchange)
-
+* Apostar con criptomonedas (Se necesitaria instalar un cliente y operar con wallets)
+* Crear un token propio (Se necesitaría ser aceptado en un exchange)
+* Estidiar el sistema de pagos de Telegram
+* Exportar la aplicación a un .apk de Android y publicarla en Google Play, conseguir token viendo anuncios. (Se necesita crear un token y esudiar Google Ads)
