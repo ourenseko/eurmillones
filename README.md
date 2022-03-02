@@ -25,7 +25,7 @@ Si seleccionas manual (M) deveras introducir 5 números de tu boleto del 1 al 50
 
 Selecciona una categoría mínima de premio a la que usted aspira
 
-¿ES HOY SU DIA DE SUERTE? ¡PRUEBELO!
+¿ES HOY SU DIA DE SUERTE, ACERTARÁ EN UN Nº DE INTENTO ANTES QUE SUS AMIGOS? ¡RETALES!
 
 
 
