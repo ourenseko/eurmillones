@@ -7,7 +7,7 @@ WHO TO RUN
 ---
 *Required install of JRE aka Java*
 
-1.- Download the Release (https://github.com/ourenseko/eurmillones/releases/tag/1.0)
+1.- Download (https://github.com/ourenseko/eurmillones/releases/tag/1.0)
 
 2.- Open PLAY.cmd
 
