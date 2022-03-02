@@ -22,7 +22,7 @@ Si selecciona boleto manual (M) debera introducir 5 números del 1 al 50 diferen
 
 Selecciona una categoría mínima (premio) a la que usted aspira, si sale un premio menor del selecciónado el programa no lo tomará en cuenta. 
 
-¿ES HOY SU DIA DE SUERTE, ACERTARÁ EN UN Nº DE INTENTO ANTES QUE SUS AMIGOS? ¡APUESTE, RETELES!
+¿ES HOY SU DIA DE SUERTE, ACERTARÁ ANTES QUE SUS AMIGOS? ¡EMPIEZE A PALMAR PASTA SIN ARRUINARSE!
 
 
 
