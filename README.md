@@ -22,13 +22,13 @@ WHO TO RUN
 
 HOW TO PLAY
 ---
-Selecciona un boleto manual (M) o automatico (A) introduciendo M o A
+Selecciona un boleto manual (M) o automatico (A) introduciendo M ó A
 
-Si seleccionas boleto manual (M) deberas introducir 5 números del 1 al 50 diferentes y 2 estrellas del 1 al 12 diferentes
+Si selecciona boleto manual (M) debera introducir 5 números del 1 al 50 diferentes y 2 estrellas del 1 al 12 diferentes, el programa mostrará los números de menor a mayor.
 
-Selecciona una categoría mínima (premio) a la que usted aspira, si sale un premio menor de la selección el programa no lo tomará en cuenta.
+Selecciona una categoría mínima (premio) a la que usted aspira, si sale un premio menor del selecciónado el programa no lo tomará en cuenta. 
 
-¿ES HOY SU DIA DE SUERTE, ACERTARÁ EN UN Nº DE INTENTO ANTES QUE SUS AMIGOS? ¡RETALES!
+¿ES HOY SU DIA DE SUERTE, ACERTARÁ EN UN Nº DE INTENTO ANTES QUE SUS AMIGOS? ¡APUESTE, RETELES!
 
 
 
