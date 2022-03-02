@@ -15,7 +15,7 @@ WHO TO RUN
 
 4.- Drag and drop the file 
 
-5.- The command shoul be: java -jar "namefile.jar"
+5.- The command should be: java -jar "namefile.jar"
 
 6.- Return for PLAY!
 
@@ -24,9 +24,9 @@ HOW TO PLAY
 ---
 Selecciona un boleto manual (M) o automatico (A) introduciendo M o A
 
-Si seleccionas manual (M) deveras introducir 5 números de tu boleto del 1 al 50 diferentes y 2 estrellas del 1 al 12 diferentes
+Si seleccionas boleto manual (M) deberas introducir 5 números del 1 al 50 diferentes y 2 estrellas del 1 al 12 diferentes
 
-Selecciona una categoría mínima de premio a la que usted aspira
+Selecciona una categoría mínima (premio) a la que usted aspira, si sale un premio menor de la selección el programa no lo tomará en cuenta.
 
 ¿ES HOY SU DIA DE SUERTE, ACERTARÁ EN UN Nº DE INTENTO ANTES QUE SUS AMIGOS? ¡RETALES!
 
