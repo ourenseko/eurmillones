@@ -9,15 +9,9 @@ WHO TO RUN
 
 1.- Download the Release (https://github.com/ourenseko/eurmillones/releases/tag/1.0)
 
-2.- Open a cmd
+2.- Open PLAY.cmd
 
-3.- type: java -jar 
-
-4.- Drag and drop the file 
-
-5.- The command should be: java -jar "namefile.jar"
-
-6.- Return for PLAY!
+3.- Enjoy!
 
 
 HOW TO PLAY
