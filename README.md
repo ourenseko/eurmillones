@@ -5,7 +5,7 @@ Juego de consola de comandos
 
 WHO TO RUN
 ---
-*Required install Java Runtime
+*Required install Java Runtime*
 
 1.- Download the firts Release
 
