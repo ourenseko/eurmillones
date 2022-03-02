@@ -5,7 +5,7 @@ DEVOPS
 Para mejor experiencia de uso:
 * Contar los premios obtenidos en cada categoría
 * Contar el número de dias, meses y años (2 sorteos = 1 semana)
-* Crear una interfaz gráfica
+* Crear una interfaz gráfica, que se vean las estadisticas y el proceso. (Similar al simulador de loterias https://www.cuandomevaatocar.com/)
 * Crear la intefaz basada en un bot de Telegram (Se necesita un dominio https, un host y estudiar la API de Telegram)
 
 
