@@ -5,7 +5,7 @@ Juego de consola de comandos
 
 WHO TO RUN
 ---
-*Required install of Java Runtime*
+*Required install of JRE aka Java*
 
 1.- Download the Release (https://github.com/ourenseko/eurmillones/releases/tag/1.0)
 
