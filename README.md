@@ -3,7 +3,7 @@ Juego de consola de comandos
 
 
 
-WHO TO RUN
+HOW TO RUN
 ---
 *Required install of JRE aka Java*
 
